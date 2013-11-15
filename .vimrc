@@ -26,6 +26,8 @@ endif
 set number
 " Enable syntax highlighting
 syntax on
+set background=light
+colorscheme zenburn
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
@@ -55,11 +57,11 @@ set shortmess=atI
 set showmode
 " Show the filename in the window titlebar
 set title
-if exists("&relativenumber")
+"if exists("&relativenumber")
   " Use relative line numbers
-  set relativenumber
-  au BufReadPost * set relativenumber
-endif
+"  set relativenumber
+"  au BufReadPost * set relativenumber
+"endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
