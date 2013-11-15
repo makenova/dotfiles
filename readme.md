@@ -1,12 +1,17 @@
 # Makenova's dotfiles.
 
-This repo contains my personal dotfiles and are heavily based on [Addy Osmani's](https://github.com/addyosmani/dotfiles/) dotfiles.
+This repo contains my personal dotfiles and are heavily based on [Addy Osmani's](https://github.com/addyosmani/dotfiles/) dotfiles.  
+I'm still working on claiming these files so there is still alot of dust that isn't mine.
 
 ## Syntax highlighting
 
 …is really important. even for these files.
 
-add the below to this file: `~/Library/Application Support/Sublime Text 2/Packages/ShellScript/Shell-Unix-Generic.tmLanguage`
+add the xml tags below to this file: `~/Library/Application Support/Sublime Text 2/Packages/ShellScript/Shell-Unix-Generic.tmLanguage`
+
+In ST3: /Applications/Sublime\ Text.app/Contents/MacOS/Packages/ShellScript.sublime-package/Shell-Unix-Generic.tmLanguage
+
+You will need to rename the ShellScript.sublime-package to ShellScript.sublime-package.zip, uncompress it, make your changes, recompress it and then rename it to the .sublime-package extension. Those are the steps I took, hopefully someone else can find a better way.
 
 ```xml
 <string>.aliases</string>
@@ -76,7 +81,7 @@ I recommend getting a [`.jshintrc`](https://github.com/jshint/node-jshint/blob/m
 ## Installation
 
 ```bash
-git clone https://github.com/addyosmani/dotfiles.git && cd dotfiles && ./sync.sh
+git clone https://github.com/makenova/dotfiles.git && cd dotfiles && ./sync.sh
 ```
 
 To update later on, just run the sync again.
