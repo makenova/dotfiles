@@ -9,7 +9,7 @@ I'm still working on claiming these files so there is still alot of dust that is
 
 add the xml tags below to this file: `~/Library/Application Support/Sublime Text 2/Packages/ShellScript/Shell-Unix-Generic.tmLanguage`
 
-In ST3: /Applications/Sublime\ Text.app/Contents/MacOS/Packages/ShellScript.sublime-package/Shell-Unix-Generic.tmLanguage
+In ST3: `/Applications/Sublime\ Text.app/Contents/MacOS/Packages/ShellScript.sublime-package/Shell-Unix-Generic.tmLanguage`
 
 You will need to rename the ShellScript.sublime-package to ShellScript.sublime-package.zip, uncompress it, make your changes, recompress it and then rename it to the .sublime-package extension. Those are the steps I took, hopefully someone else can find a better way.
 

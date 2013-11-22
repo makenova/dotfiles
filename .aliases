@@ -35,6 +35,7 @@ alias xcode="open -a '/Developer/Applications/Xcode.app'"
 alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome"
+alias canary="open -a google\ chrome\ canary"
 alias f='open -a Finder'
 alias photoshop="open -a '/Applications/Adobe Photoshop CS5/Adobe Photoshop CS5.app'"
 alias gifcap="open -a licecap"

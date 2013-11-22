@@ -44,9 +44,9 @@ function workmode(){
 # Usage: devmode
 # Usage: devmode bigwiki
 function devmode(){
-  chrome https://github.com/makenova/$1
-  chrome https://gist.github.com/makenova
-  chrome https://bitbucket.org/makenova
+  canary https://github.com/makenova/$1
+  canary https://gist.github.com/makenova
+  canary https://bitbucket.org/makenova
   open -a /Applications/WebStorm.app/Contents/MacOS/webide
   open -a "Sublime Text"
 }
