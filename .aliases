@@ -41,6 +41,7 @@ alias photoshop="open -a '/Applications/Adobe Photoshop CS5/Adobe Photoshop CS5.
 alias gifcap="open -a licecap"
 alias webstorm="open -a /Applications/WebStorm.app/Contents/MacOS/webide"
 alias brackets="open -a /Applications/Brackets\ Sprint\ 33.app/Contents/MacOS/Brackets"
+alias mysql='/Applications/MAMP/Library/bin/mysql'
 
 
 # general shortcuts
@@ -81,7 +82,7 @@ fi
 
 # `cat` with beautiful colors. requires Pygments installed.
 # 							   sudo easy_install Pygments
-alias cat='pygmentize -O style=monokai -f console256 -g'
+alias ccat='pygmentize -O style=monokai -f console256 -g'
 
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
