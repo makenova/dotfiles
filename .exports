@@ -9,3 +9,8 @@ export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+
+# Put /usr/local/bin before /usr/bin because Homebrew
+export PATH=/usr/local/bin:$PATH
+
+export NODE_ENV=development
