@@ -1,22 +1,3 @@
-# makenova's old prompt settings
-
-# # Set git autocompletion and PS1 integration
-# if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
-#   . /usr/local/git/contrib/completion/git-completion.bash
-# fi
-
-# if [ -f /opt/local/share/doc/git-core/contrib/completion/git-prompt.sh ]; then
-#     . /opt/local/share/doc/git-core/contrib/completion/git-prompt.sh
-# fi
-
-# GIT_PS1_SHOWDIRTYSTATE=true
-
-# if [ -f /opt/local/etc/bash_completion ]; then
-#     . /opt/local/etc/bash_completion
-# fi
-
-# PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
-
 # Dat new new
 
 # @gf3’s Sexy Bash Prompt, inspired by “Extravagant Zsh Prompt”
@@ -28,6 +9,23 @@ if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/n
 elif infocmp xterm-256color >/dev/null 2>&1; then
         export TERM=xterm-256color
 fi
+
+# Set git autocompletion and PS1 integration
+if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
+  . /usr/local/git/contrib/completion/git-completion.bash
+fi
+
+# Homebrew installs bash completion here
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+  . /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+
+# Homebrew installs git-prompt here
+if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
+  . /usr/local/etc/bash_completion.d/git-prompt.sh
+fi
+
+GIT_PS1_SHOWDIRTYSTATE=true
 
 if tput setaf 1 &> /dev/null; then
         tput sgr0
@@ -62,29 +60,4 @@ else
         RESET="\033[m"
 fi
 
-
-function git_info() {
-        # check if we're in a git repo
-        git rev-parse --is-inside-work-tree &>/dev/null || return
-
-        # quickest check for what branch we're on
-        branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
-
-        # check if it's dirty (via github.com/sindresorhus/pure)
-        dirty=$(git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ]&& echo -e "*")
-
-        echo $WHITE" on "$RED\( $branch $dirty\)
-}
-
-# iTerm Tab and Title Customization and prompt customization
-# http://sage.ucsc.edu/xtal/iterm_tab_customization.html
-
-# Put the string " [bash]   hostname::/full/directory/path"
-# in the title bar using the command sequence
-# \[\e]2;[bash]   \h::\]$PWD\[\a\]
-
-# Put the penultimate and current directory
-# in the iterm tab
-# \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
-
-PS1="\[$GREEN\]\u@\h\[$WHITE\]:\[$BLUE\]\w\$(git_info)\[$WHITE\]\n\$ \[$RESET\]"
+PS1="\[$BLUE\]\u@\h\[$WHITE\]:\[$BLUE\]\w\[$RED\]\$(__git_ps1 ' (%s)')\[$RED\]\n\$ \[$RESET\]"

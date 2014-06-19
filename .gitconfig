@@ -7,41 +7,31 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [color]
 	ui = always
-[apply]
-	whitespace = fix
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
 [color "diff"]
 	meta = yellow bold
 	frag = magenta bold
 	old = red bold
 	new = green bold
+	whitespace = red reverse
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = opendiff
 [merge]
+	tool = opendiff
 	log = true
-[url "git@github.com:"]
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-	insteadOf = "github:"
-[url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-	insteadOf = "gist:"
-
-# Any GitHub repo with my username should be checked out r/w by default
-# http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
-[url "git@github.com:addyosmani/"]
-  insteadOf = "git://github.com/addyosmani/"
+[difftool "opendiff"]
+	cmd = /usr/bin/opendiff \"$LOCAL\" \"$REMOTE\" -merge \"$MERGED\" | cat
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
