@@ -1,3 +1,5 @@
+" execute patogen
+execute pathogen#infect()
 " Make vim more useful
 set nocompatible
 " Enhance command-line completion
@@ -22,16 +24,21 @@ if exists("&undodir")
   set undodir=~/.vim/undo
 endif
 
+" Make tabs as wide as two spaces
+set tabstop=2
+set smartindent
+set shiftwidth=2
+set expandtab
+
 " Enable line numbers
 set number
 " Enable syntax highlighting
 syntax on
-set background=light
-colorscheme zenburn
+set background=dark
+colorscheme solarized
 " Highlight current line
 set cursorline
-" Make tabs as wide as two spaces
-set tabstop=2
+
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
@@ -64,6 +71,10 @@ set title
 "endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+" Show tab labels 0=never 1=some 2=always
+set showtabline=2
+" file explorer like nerdtree
+let g:netrw_liststyle=3
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace ()
@@ -74,3 +85,40 @@ function! StripWhitespace ()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace ()<CR>
+
+" Stolen from vim-sensible
+" https://github.com/tpope/vim-sensible
+" Copy indent from current line for next line
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+set smarttab
+" Read a file again if it has been changed outside Vim
+set autoread
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
+
+" NERDTree settings
+" Open NT when when Vim starts up
+autocmd vimenter * NERDTree
+" open NERDTree when vim is open with no files specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Toggle nerdtree
+map <C-n> :NERDTreeToggle<CR>
+" Close Vim if NERDTree is the last window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Stolen form thoughtbot, split pane sweetness
+" http://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
+" Quick split pane navigation
+noremap <C-J> <C-W><C-J>
+noremap <C-K> <C-W><C-K>
+noremap <C-L> <C-W><C-L>
+noremap <C-H> <C-W><C-H>
+" Better split opening
+set splitbelow
+set splitright
