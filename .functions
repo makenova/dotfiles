@@ -29,26 +29,13 @@ function browsers(){
   safari $1 
 }
 
-
-# Launch work sites
-# Usage: workmode
-# Usage: workmode maintenancerequestsystem
-function workmode(){
-  chrome https://######
-  chrome https://bitbucket.org/######/$1
-  chrome https://gist.github.com/makenova/######
-  chrome https://mail.google.com/
-}
-
-
 # Launch personal development sites and programs
 # Usage: devmode
 # Usage: devmode bigwiki
 function devmode(){
-  canary https://github.com/makenova/$1
-  canary https://gist.github.com/makenova
-  canary https://bitbucket.org/makenova
-  open -a /Applications/WebStorm.app/Contents/MacOS/webide
+  chrome https://github.com/makenova/$1
+  chrome https://gist.github.com/makenova
+  chrome https://bitbucket.org/makenova
   open -a "Sublime Text"
 }
 

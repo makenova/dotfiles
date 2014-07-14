@@ -48,10 +48,11 @@ alias mongodps='mongod --fork --logpath ~/Documents/mongo.log'
 alias vagrantup='vagrant up --provider=vmware_fusion'
 
 # general shortcuts
-alias pro="cd ~/projects"
+alias p="cd ~/projects"
 alias gh="open -a google\ chrome 'http://github.com/makenova'"
 # Open github web page of current git repo
 # alias github="chrome \`git remote -v | grep github.com | grep fetch | head -1 | field 2 | sed 's/git:/http:/g'\`"
+alias bb="open -a google\ chrome 'http://bitbucket.org/makenova'"
 
 alias cleantwitter="rm ~/Library/Containers/com.twitter.twitter-mac/Data/Library/Caches/com.atebits.tweetie.profile-images/*"
 # be nice
