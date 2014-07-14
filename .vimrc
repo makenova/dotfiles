@@ -122,3 +122,6 @@ noremap <C-H> <C-W><C-H>
 " Better split opening
 set splitbelow
 set splitright
+" Tab completion
+" http://robots.thoughtbot.com/vim-you-complete-me
+imap <Tab> <C-P>
