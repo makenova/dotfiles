@@ -125,3 +125,14 @@ set splitright
 " Tab completion
 " http://robots.thoughtbot.com/vim-you-complete-me
 imap <Tab> <C-P>
+
+" set terminal color to 256
+set t_Co=256
+
+" enable/disable automatic population of the `g:airline_symbols` dictionary with powerline symbols. 
+let g:airline_powerline_fonts=1
+
+" Powerline stuff from adam
+if has('gui_running')
+  set guifont=Liberation\ Mono\ for\ Powerline:h12,Liberation_Mono_for_Powerline:h12,Ubuntu\ Mono:h26,Consolas:h12,Courier:h12
+endif
