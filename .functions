@@ -5,6 +5,7 @@ function functions() {
   echo "workmode: Launch work sites"
   echo "devmode: Launch personal development sites and programs"
   echo "f: find shorthand"
+  echo "fu: find recursively instance of provided arg in files"
   echo "server: Start an HTTP server from a directory, optionally specifying the port"
   echo "clone: A better git clone"
   echo "cp_p: Copy w/ progress"
@@ -43,6 +44,12 @@ function devmode(){
 # find shorthand
 function f() {
     find . -name "$1"
+}
+
+
+# find recursively instance of provided arg in files
+function fu() {
+  find ./ -type f -print0 | xargs -0 grep -n "$1"
 }
 
 
