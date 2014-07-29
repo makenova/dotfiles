@@ -10,3 +10,6 @@
 [submodule "vim-gitgutter"]
   path = .vim/bundle/vim-gitgutter
   url = https://github.com/airblade/vim-gitgutter
+[submodule "vim-bufferline"]
+  path = .vim/bundle/vim-bufferline
+  url = https://github.com/bling/vim-bufferline
