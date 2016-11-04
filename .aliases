@@ -26,7 +26,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # programs
-alias st='open -a "Sublime Text"'
+alias subl='open -a "Sublime Text"'
 alias preview="open -a '$PREVIEW'"
 alias xcode="open -a '/Developer/Applications/Xcode.app'"
 alias safari="open -a safari"
@@ -36,27 +36,15 @@ alias canary="open -a google\ chrome\ canary"
 alias f='open -a Finder'
 alias photoshop="open -a '/Applications/Adobe Photoshop CS5/Adobe Photoshop CS5.app'"
 alias gifcap="open -a licecap"
-alias webstorm="open -a /Applications/WebStorm.app/Contents/MacOS/webide"
-alias brackets="open -a /Applications/Brackets\ Sprint\ 33.app/Contents/MacOS/Brackets"
-alias mysql='/Applications/MAMP/Library/bin/mysql'
 
 # DB
 alias mongodps='mongod --fork --logpath ~/Documents/mongo.log'
 #alias mongodps="mongod --config /usr/local/etc/mongod.conf --fork --logpath ~/Documents/mongolog.log"
 
-#Ops
-alias vagrantup='vagrant up --provider=vmware_fusion'
-
 # general shortcuts
-alias p="cd ~/projects"
 alias gh="open -a google\ chrome 'http://github.com/makenova'"
 # Open github web page of current git repo
 # alias github="chrome \`git remote -v | grep github.com | grep fetch | head -1 | field 2 | sed 's/git:/http:/g'\`"
-alias bb="open -a google\ chrome 'http://bitbucket.org/makenova'"
-
-alias cleantwitter="rm ~/Library/Containers/com.twitter.twitter-mac/Data/Library/Caches/com.atebits.tweetie.profile-images/*"
-# be nice
-alias please=sudo
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -91,18 +79,6 @@ alias catc='pygmentize -O style=monokai -f console256 -g'
 
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
-
-# run the following command to claim ownership of node so that I can use npm without having to use sudo.
-# sudo chown -R `whoami` ~/.npm && sudo chown -R `whoami` /usr/local/lib/node_modules/
-# npm
-alias npmp="npm publish"
-alias npma="npm adduser"
-alias npmi="npm install"
-alias npmg="npm install -g"
-alias npmu="npm update"
-alias npmr="npm uninstall"
-alias npmrg="npm uninstall -g"
-alias npml="npm list"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"

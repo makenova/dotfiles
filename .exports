@@ -14,3 +14,9 @@ export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 export PATH=/usr/local/bin:$PATH
 
 export NODE_ENV=development
+
+export GOPATH=$HOME/projects/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
